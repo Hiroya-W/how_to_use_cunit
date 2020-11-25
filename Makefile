@@ -1,4 +1,5 @@
 CC := gcc
+SRCS := fizzbuzz.c
 OBJS := main.o fizzbuzz.o
 CFLAGS := -W -Wall
 
@@ -10,8 +11,8 @@ all: main test
 
 main: $(OBJS)
 
-test: test.c fizzbuzz.c
-	$(CC) $^ $(TEST_CFLAGS) $(TEST_LIBDIR) $(TEST_LIB) -o $@
+test: test.c $(SRCS)
+	$(CC) $< $(TEST_CFLAGS) $(TEST_LIBDIR) $(TEST_LIB) -o $@
 
 $(OBJS): fizzbuzz.h 
 
