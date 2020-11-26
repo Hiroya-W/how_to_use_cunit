@@ -3,7 +3,7 @@ SRCS := fizzbuzz.c
 OBJS := main.o fizzbuzz.o
 CFLAGS := -W -Wall
 
-TEST_CFLAGS := $(CFLAGS)
+TEST_CFLAGS := $(CFLAGS) -Dmain=_main_disabled
 TEST_LIBDIR := -L/usr/lib
 TEST_LIB := -lcunit
 

@@ -4,6 +4,7 @@
 
 #include "fizzbuzz.c"
 #include "fizzbuzz.h"
+#include "main.c"
 
 void fizzbuzz_test_1(void);
 void fizzbuzz_test_3(void);
@@ -11,6 +12,7 @@ void fizzbuzz_test_5(void);
 void fizzbuzz_test_15(void);
 void get_str_test(void);
 
+#undef main
 int main(void) {
     CU_pSuite suite;
     CU_initialize_registry();
