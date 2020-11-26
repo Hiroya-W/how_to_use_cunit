@@ -6,7 +6,7 @@
 int main(void) {
     int i;
     char result[256];
-    for (i = 1; i < 20; i++) {
+    for (i = 1; i < 21; i++) {
         if (fizzbuzz(i, result) == -1) {
             exit(EXIT_FAILURE);
         }
