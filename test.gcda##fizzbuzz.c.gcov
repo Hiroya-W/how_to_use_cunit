@@ -1,0 +1,45 @@
+        -:    0:Source:fizzbuzz.c
+        -:    0:Graph:test.gcno
+        -:    0:Data:test.gcda
+        -:    0:Runs:1
+        -:    1:#include "fizzbuzz.h"
+        -:    2:
+        -:    3:#include <stdio.h>
+        -:    4:
+        -:    5:static const char *get_str_FizzBuzz(void);
+        -:    6:static const char *get_str_Fizz(void);
+        -:    7:static const char *get_str_Buzz(void);
+        -:    8:
+        -:    9:static const char *STR_FIZZBUZZ = "FizzBuzz";
+        -:   10:static const char *STR_FIZZ = "Fizz";
+        -:   11:static const char *STR_BUZZ = "Buzz";
+        -:   12:
+        5:   13:int fizzbuzz(int num, char *result) {
+        5:   14:    if (20 <= num) {
+        1:   15:        return error("20以上の値が指定されました");
+        -:   16:    }
+        -:   17:
+        4:   18:    if ((num % 3 == 0) && (num % 5 == 0)) {
+        1:   19:        sprintf(result, get_str_FizzBuzz());
+        3:   20:    } else if (num % 3 == 0) {
+        1:   21:        sprintf(result, get_str_Fizz());
+        2:   22:    } else if (num % 5 == 0) {
+        1:   23:        sprintf(result, get_str_Buzz());
+        -:   24:    } else {
+        1:   25:        sprintf(result, "%d", num);
+        -:   26:    }
+        -:   27:
+        4:   28:    return 0;
+        -:   29:}
+        -:   30:
+        2:   31:static const char *get_str_FizzBuzz(void) {
+        2:   32:    return STR_FIZZBUZZ;
+        -:   33:}
+        -:   34:
+        2:   35:static const char *get_str_Fizz(void) {
+        2:   36:    return STR_FIZZ;
+        -:   37:}
+        -:   38:
+        2:   39:static const char *get_str_Buzz(void) {
+        2:   40:    return STR_BUZZ;
+        -:   41:}

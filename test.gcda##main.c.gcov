@@ -1,0 +1,25 @@
+        -:    0:Source:main.c
+        -:    0:Graph:test.gcno
+        -:    0:Data:test.gcda
+        -:    0:Runs:1
+        -:    1:#include <stdio.h>
+        -:    2:#include <stdlib.h>
+        -:    3:
+        -:    4:#include "fizzbuzz.h"
+        -:    5:
+    #####:    6:int main(void) {
+        -:    7:    int i;
+        -:    8:    char result[256];
+    #####:    9:    for (i = 1; i < 21; i++) {
+    #####:   10:        if (fizzbuzz(i, result) == -1) {
+    #####:   11:            exit(EXIT_FAILURE);
+        -:   12:        }
+    #####:   13:        printf("%s\n", result);
+        -:   14:    }
+    #####:   15:    return 0;
+        -:   16:}
+        -:   17:
+        1:   18:int error(char *mes) {
+        1:   19:    fprintf(stderr, "ERROR:%s\n", mes);
+        1:   20:    return -1;
+        -:   21:}
