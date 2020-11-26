@@ -1,3 +1,5 @@
+#include "fizzbuzz.h"
+
 #include <stdio.h>
 
 static const char *get_str_FizzBuzz(void);
@@ -8,7 +10,11 @@ static const char *STR_FIZZBUZZ = "FizzBuzz";
 static const char *STR_FIZZ = "Fizz";
 static const char *STR_BUZZ = "Buzz";
 
-void fizzbuzz(int num, char *result) {
+int fizzbuzz(int num, char *result) {
+    if (20 <= num) {
+        return error("20以上の値が指定されました");
+    }
+
     if ((num % 3 == 0) && (num % 5 == 0)) {
         sprintf(result, get_str_FizzBuzz());
     } else if (num % 3 == 0) {
@@ -18,6 +24,8 @@ void fizzbuzz(int num, char *result) {
     } else {
         sprintf(result, "%d", num);
     }
+
+    return 0;
 }
 
 static const char *get_str_FizzBuzz(void) {
