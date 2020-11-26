@@ -1,3 +1,4 @@
+#include <CUnit/Basic.h>
 #include <CUnit/CUnit.h>
 #include <CUnit/Console.h>
 #include <CUnit/TestDB.h>
@@ -15,6 +16,7 @@ void get_str_test(void);
 
 #undef main
 int main(void) {
+    int ret;
     CU_pSuite suite;
     CU_initialize_registry();
 
@@ -28,9 +30,13 @@ int main(void) {
     suite = CU_add_suite("FizzBuzz String Test", NULL, NULL);
     CU_add_test(suite, "get_str_test", get_str_test);
 
-    CU_console_run_tests();
+    // CU_console_run_tests();
+    CU_basic_run_tests();
+
+    ret = CU_get_number_of_failures();
+
     CU_cleanup_registry();
-    return 0;
+    return ret;
 }
 
 void fizzbuzz_test_1(void) {

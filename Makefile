@@ -16,6 +16,10 @@ test: test.c $(SRCS)
 
 $(OBJS): fizzbuzz.h 
 
+.PHONY: check
+check: test
+	@./test
+
 .PHONY: clean
 clean:
 	-rm *.o 
