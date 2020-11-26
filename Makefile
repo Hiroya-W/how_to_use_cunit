@@ -3,7 +3,7 @@ SRCS := fizzbuzz.c
 OBJS := main.o fizzbuzz.o
 CFLAGS := -W -Wall
 
-TEST_CFLAGS := $(CFLAGS) -Dmain=_main_disabled
+TEST_CFLAGS := $(CFLAGS) -Dmain=_main_disabled -fprofile-arcs -ftest-coverage
 TEST_LIBDIR := -L/usr/lib
 TEST_LIB := -lcunit
 
@@ -20,5 +20,6 @@ $(OBJS): fizzbuzz.h
 clean:
 	-rm *.o 
 	-rm main test
+	-rm *.gcno *.gcov *.gcda *.gch
 
 .DEFAULT_GOAL=all
