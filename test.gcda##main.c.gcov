@@ -7,19 +7,29 @@
         -:    3:
         -:    4:#include "fizzbuzz.h"
         -:    5:
+function _main_disabled called 0 returned 0% blocks executed 0%
     #####:    6:int main(void) {
         -:    7:    int i;
         -:    8:    char result[256];
     #####:    9:    for (i = 1; i < 21; i++) {
+branch  0 never executed
+branch  1 never executed
     #####:   10:        if (fizzbuzz(i, result) == -1) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
     #####:   11:            exit(EXIT_FAILURE);
+call    0 never executed
         -:   12:        }
     #####:   13:        printf("%s\n", result);
+call    0 never executed
         -:   14:    }
     #####:   15:    return 0;
         -:   16:}
         -:   17:
+function error called 1 returned 100% blocks executed 100%
         1:   18:int error(char *mes) {
         1:   19:    fprintf(stderr, "ERROR:%s\n", mes);
+call    0 returned 100%
         1:   20:    return -1;
         -:   21:}

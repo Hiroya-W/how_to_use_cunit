@@ -14,17 +14,32 @@
         -:   10:static const char *STR_FIZZ = "Fizz";
         -:   11:static const char *STR_BUZZ = "Buzz";
         -:   12:
+function fizzbuzz called 5 returned 100% blocks executed 100%
         5:   13:int fizzbuzz(int num, char *result) {
         5:   14:    if (20 <= num) {
+branch  0 taken 20% (fallthrough)
+branch  1 taken 80%
         1:   15:        return error("20以上の値が指定されました");
+call    0 returned 100%
         -:   16:    }
         -:   17:
         4:   18:    if ((num % 3 == 0) && (num % 5 == 0)) {
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
+branch  2 taken 50% (fallthrough)
+branch  3 taken 50%
         1:   19:        sprintf(result, get_str_FizzBuzz());
+call    0 returned 100%
         3:   20:    } else if (num % 3 == 0) {
+branch  0 taken 33% (fallthrough)
+branch  1 taken 67%
         1:   21:        sprintf(result, get_str_Fizz());
+call    0 returned 100%
         2:   22:    } else if (num % 5 == 0) {
+branch  0 taken 50% (fallthrough)
+branch  1 taken 50%
         1:   23:        sprintf(result, get_str_Buzz());
+call    0 returned 100%
         -:   24:    } else {
         1:   25:        sprintf(result, "%d", num);
         -:   26:    }
@@ -32,14 +47,17 @@
         4:   28:    return 0;
         -:   29:}
         -:   30:
+function get_str_FizzBuzz called 2 returned 100% blocks executed 100%
         2:   31:static const char *get_str_FizzBuzz(void) {
         2:   32:    return STR_FIZZBUZZ;
         -:   33:}
         -:   34:
+function get_str_Fizz called 2 returned 100% blocks executed 100%
         2:   35:static const char *get_str_Fizz(void) {
         2:   36:    return STR_FIZZ;
         -:   37:}
         -:   38:
+function get_str_Buzz called 2 returned 100% blocks executed 100%
         2:   39:static const char *get_str_Buzz(void) {
         2:   40:    return STR_BUZZ;
         -:   41:}

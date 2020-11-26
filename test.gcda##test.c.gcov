@@ -18,76 +18,110 @@
         -:   14:void get_str_test(void);
         -:   15:
         -:   16:#undef main
+function main called 1 returned 100% blocks executed 100%
         1:   17:int main(void) {
         -:   18:    CU_pSuite suite;
         1:   19:    CU_initialize_registry();
+call    0 returned 100%
         -:   20:
         1:   21:    suite = CU_add_suite("FizzBuzz Test", NULL, NULL);
+call    0 returned 100%
         1:   22:    CU_add_test(suite, "FizzBuzz_Test_1", fizzbuzz_test_1);
+call    0 returned 100%
         1:   23:    CU_add_test(suite, "FizzBuzz_Test_3", fizzbuzz_test_3);
+call    0 returned 100%
         1:   24:    CU_add_test(suite, "FizzBuzz_Test_5", fizzbuzz_test_5);
+call    0 returned 100%
         1:   25:    CU_add_test(suite, "FizzBuzz_Test_15", fizzbuzz_test_15);
+call    0 returned 100%
         1:   26:    CU_add_test(suite, "FizzBuzz_Test_30", fizzbuzz_test_30);
+call    0 returned 100%
         -:   27:
         1:   28:    suite = CU_add_suite("FizzBuzz String Test", NULL, NULL);
+call    0 returned 100%
         1:   29:    CU_add_test(suite, "get_str_test", get_str_test);
+call    0 returned 100%
         -:   30:
         1:   31:    CU_console_run_tests();
+call    0 returned 100%
         1:   32:    CU_cleanup_registry();
+call    0 returned 100%
         1:   33:    return 0;
         -:   34:}
         -:   35:
+function fizzbuzz_test_1 called 1 returned 100% blocks executed 100%
         1:   36:void fizzbuzz_test_1(void) {
         -:   37:    char result[256];
         1:   38:    memset(result, '\0', sizeof(result));
         -:   39:
         1:   40:    fizzbuzz(1, result);
+call    0 returned 100%
         -:   41:
         1:   42:    CU_ASSERT_STRING_EQUAL("1", result);
+call    0 returned 100%
         1:   43:    return;
         -:   44:}
         -:   45:
+function fizzbuzz_test_3 called 1 returned 100% blocks executed 100%
         1:   46:void fizzbuzz_test_3(void) {
         -:   47:    char result[256];
         1:   48:    memset(result, '\0', sizeof(result));
         -:   49:
         1:   50:    fizzbuzz(3, result);
+call    0 returned 100%
         -:   51:
         1:   52:    CU_ASSERT_STRING_EQUAL("Fizz", result);
+call    0 returned 100%
         1:   53:    return;
         -:   54:}
         -:   55:
+function fizzbuzz_test_5 called 1 returned 100% blocks executed 100%
         1:   56:void fizzbuzz_test_5(void) {
         -:   57:    char result[256];
         1:   58:    memset(result, '\0', sizeof(result));
         -:   59:
         1:   60:    fizzbuzz(5, result);
+call    0 returned 100%
         -:   61:
         1:   62:    CU_ASSERT_STRING_EQUAL("Buzz", result);
+call    0 returned 100%
         1:   63:    return;
         -:   64:}
         -:   65:
+function fizzbuzz_test_15 called 1 returned 100% blocks executed 100%
         1:   66:void fizzbuzz_test_15(void) {
         -:   67:    char result[256];
         1:   68:    memset(result, '\0', sizeof(result));
         -:   69:
         1:   70:    fizzbuzz(15, result);
+call    0 returned 100%
         -:   71:
         1:   72:    CU_ASSERT_STRING_EQUAL("FizzBuzz", result);
+call    0 returned 100%
         1:   73:    return;
         -:   74:}
         -:   75:
+function fizzbuzz_test_30 called 1 returned 100% blocks executed 100%
         1:   76:void fizzbuzz_test_30(void) {
         -:   77:    char result[256];
         1:   78:    memset(result, '\0', sizeof(result));
         -:   79:
         1:   80:    CU_ASSERT_NOT_EQUAL_FATAL(fizzbuzz(30, result), 0);
+call    0 returned 100%
+call    1 returned 100%
         1:   81:    return;
         -:   82:}
         -:   83:
+function get_str_test called 1 returned 100% blocks executed 100%
         1:   84:void get_str_test(void) {
         1:   85:    CU_ASSERT_STRING_EQUAL("Fizz", get_str_Fizz());
+call    0 returned 100%
+call    1 returned 100%
         1:   86:    CU_ASSERT_STRING_EQUAL("Buzz", get_str_Buzz());
+call    0 returned 100%
+call    1 returned 100%
         1:   87:    CU_ASSERT_STRING_EQUAL("FizzBuzz", get_str_FizzBuzz());
+call    0 returned 100%
+call    1 returned 100%
         1:   88:    return;
         -:   89:}
