@@ -10,6 +10,7 @@ void fizzbuzz_test_1(void);
 void fizzbuzz_test_3(void);
 void fizzbuzz_test_5(void);
 void fizzbuzz_test_15(void);
+void fizzbuzz_test_30(void);
 void get_str_test(void);
 
 #undef main
@@ -22,6 +23,7 @@ int main(void) {
     CU_add_test(suite, "FizzBuzz_Test_3", fizzbuzz_test_3);
     CU_add_test(suite, "FizzBuzz_Test_5", fizzbuzz_test_5);
     CU_add_test(suite, "FizzBuzz_Test_15", fizzbuzz_test_15);
+    CU_add_test(suite, "FizzBuzz_Test_30", fizzbuzz_test_30);
 
     suite = CU_add_suite("FizzBuzz String Test", NULL, NULL);
     CU_add_test(suite, "get_str_test", get_str_test);
@@ -68,6 +70,14 @@ void fizzbuzz_test_15(void) {
     fizzbuzz(15, result);
 
     CU_ASSERT_STRING_EQUAL("FizzBuzz", result);
+    return;
+}
+
+void fizzbuzz_test_30(void) {
+    char result[256];
+    memset(result, '\0', sizeof(result));
+
+    CU_ASSERT_NOT_EQUAL_FATAL(fizzbuzz(30, result), 0);
     return;
 }
 
